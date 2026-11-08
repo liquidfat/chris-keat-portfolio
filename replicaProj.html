@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ChrisKeatPortfolio</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body class="splitpage">
+        
+      <div class="split">
+
+        <div class="images">
+          <button type="button"><img src="images/replica1.jpg"></button>
+          <button type="button"><img src="images/replica2.gif"></button>
+          <button type="button"><img src="images/replica3.jpg" ></button>
+          <button type="button"><img src="images/replica4.jpg" ></button>
+          <button type="button"><img src="images/replica5.jpg" ></button>
+          <button type="button"><img src="images/replica6.jpg" ></button>
+          <button type="button"><img src="images/replica7.jpg" ></button>
+         
+        </div>
+        
+        <dialog class="lightbox" id="lightbox">
+          <img src="" alt="">
+        </dialog>
+
+        <div class="text">
+          <h1>Replica - Promo Page</h1>
+            
+          <p><a href="https://liquidfat.github.io/OPN---REPLICA-SITE/"><span style="font-weight: bold">Link to website (desktop only)</span></a></p>
+          <br>
+          <p>"REPLICA" is a mock promotional landing page made as part of a web tech college <span style="font-weight: bold">solo assignment</span>.</p>
+          <br>
+          
+          <p>The brief for the assignment required me to choose a piece of media and make a promo page for it. 
+            I chose to do it for the launch of the album "Replica" by Oneohtrix Point Never. The <span style="font-weight: bold">minimum requirements</span> for the page were to keep it on one page and include 8 sections, 6 of which should fill the screen and 2 of which can be more experimental.
+          </p>
+          <br>
+          <p>As this was a solo project, I was responsible for creating all elements of the site. This included the planning, the <span style="font-weight: bold">visual design</span>, the <span style="font-weight: bold">user experience</span>, the <span style="font-weight: bold">interactive elements</span> and the <span style="font-weight: bold">coding</span>, which was done using <span style="font-weight: bold">HTML, CSS and Javascript</span>.
+          </p>
+
+        
+          <div class="columns">
+
+          <div class="column">
+            <h2>Tools</h2>
+            <ul>
+              <li><span style="font-weight: bold">Illustrator</span> - design and planning</li>
+              <li><span style="font-weight: bold">Photoshop</span> - image creation and editing</li>
+              <li><span style="font-weight: bold">HTML and CSS</span> - content and layout</li>
+              <li><span style="font-weight: bold">Javascript</span> - interactive elements</li>
+            </ul>
+          </div>
+
+          <div class="column">
+            <h2>Skills</h2>
+            <ul>
+              <li><span style="font-weight: bold">Graphic Design</span> - typography, image choice and layout</li>
+              <li><span style="font-weight: bold">UX Design</span> - interactions and navigation</li>
+              <li><span style="font-weight: bold">Problem Solving</span> - Javascript code issues</li>
+              <li><span style="font-weight: bold">Coding</span> - HTML, CSS and Javascript</li>
+            </ul>
+          </div>
+
+        </div>
+          
+          <br>
+          <br>
+          <p>One of the parts I am most proud of is how the <span style="font-weight: bold">design, layout and interactions capture and promote</span> this "clients" unique style and appeal.
+            I made sure that it acccurately <span style="font-weight: bold">represents</span> what the client is about, but with enough stylistic flair and interaction to keep the visitor interested and engaged.
+          I also think the <span style="font-weight: bold">tracklist section</span> and the interactions with hovering and having music videos play really stands out.</p>
+          
+        <br>
+          <p>During the creation of this site, I <span style="font-weight: bold">learnt</span> alot about general proficiency in web coding, especially Javascript as I didn’t have much practical experience in that before this project.
+            Going into this project, I was very confident in my idea, both the visual and interactive elements, but if I was to <span style="font-weight: bold">do anything differently</span>, I would have expanded on the process book and tracked the progress I made in more detail. </p>
+          
+          <br>
+          <p>This site also won the <span style="font-weight: bold">Student Media Award</span> for <span style="font-weight: bold">"Best Interactive Digital Experience"</span> in 2026.</p>
+        <br>
+          <p><span style="font-weight: bold">Download the process book</span> <a href="/files/Replica%20Process%20Book.pdf" download>here</a> for a detailed walkthrough of my process.</p>
+          
+        </div>
+
+      </div>
+      
+      
+   
+      <footer class="bar">
+        <nav class="nav" aria-label="Main">
+          <a class="btn" href="index.html">Index</a>
+          <a class="btn" href="projects.html" aria-current="page">Projects</a>
+          <a class="btn" href="about.html">About</a>
+        </nav>
+        <button class="btn info" popovertarget="info">i</button>
+      </footer>
+        
+      <div id="info" popover class="info-pop">
+          <p>Christopher Keatinge</p>
+          <p>Dublin, Ireland</p>
+          <p><a href="mailto:b00170101@mytudublin.ie">B00170101@mytudublin.com</a></p>
+          <p><a href="https://www.instagram.com/chris_keat_/">Instagram</a></p>
+          <p><a href="https://www.linkedin.com/in/christopher-keatinge/">LinkedIn</a></p>
+          <p><a href="/files/ChristopherKeatinge_CV.pdf" download>CV</a></p>
+      </div>
+        
+      
+      <script>
+        const box = document.getElementById("lightbox");
+        const big = box.querySelector("img");
+
+        document.querySelectorAll(".images button").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const img = btn.querySelector("img");
+            big.src = img.src;
+            big.alt = img.alt;
+            box.showModal();
+          });
+        });
+
+        box.addEventListener("click", () => box.close());
+      </script>
+      
+      
+    </body>
+</html>
+
+
+

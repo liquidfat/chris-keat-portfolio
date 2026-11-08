@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ChrisKeatPortfolio</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body class="splitpage">
+        
+      <div class="split">
+
+        <div class="images">
+          <button type="button"><img src="images/cdm1.jpg"></button>
+          <button type="button"><img src="images/cdm2.jpg"></button>
+          <button type="button"><img src="images/cdm3.jpg" ></button>
+          <button type="button"><img src="images/cdm4.jpg" ></button>
+          <button type="button"><img src="images/cdm5.jpg" ></button>
+          <button type="button"><img src="images/cdm6.jpg" ></button>
+          <button type="button"><img src="images/cdm7.jpg" ></button>
+          <button type="button"><img src="images/cdm8.jpg" ></button>
+          <button type="button"><img src="images/cdm9.jpg" ></button>
+          <button type="button"><img src="images/cdm10.jpg" ></button>
+         
+         
+        </div>
+        
+        <dialog class="lightbox" id="lightbox">
+          <img src="" alt="">
+        </dialog>
+
+        <div class="text">
+          <h1>CDM Pamphlet - Print media design</h1>
+            
+          <p><span style="font-weight: bold">Download and view the whole pamphlet <a href="/files/CDM%20Pamphlet%20A4.pdf" download>here</a></span>.</p>
+          <br>
+          <p>This project involved the creation of a <span style="font-weight: bold">promotional poster/pamphlet</span> for the "Creative Digital Media" course in TU Dublin as part of a design assignment.</p>
+          <br>
+          
+          <p>For this project, I was given a <span style="font-weight: bold">mock brief</span> that was written as if the CDM course in TU Dublin had come to me looking for a pamphlet design.
+            It asked for an <span style="font-weight: bold">"engaging and dynamic design"</span> that <span style="font-weight: bold">reflected the "progressive and disruptive nature of the course"</span>. It also <span style="font-weight: bold">specified the format</span> for the design, it being in printed poster format (A2), double sided and capable of folding down to A4 size for convenience.</p>
+          <br>
+          <p>As this was a solo project, I was responsible for creating all elements of the design. This included <span style="font-weight: bold">research</span>, <span style="font-weight: bold">planning</span>, <span style="font-weight: bold">ideation</span>, <span style="font-weight: bold">asset creation</span> and <span style="font-weight: bold">layout</span>.
+          </p>
+          
+          
+        
+          <div class="columns">
+
+          <div class="column">
+            <h2>Tools</h2>
+            <ul>
+              <li><span style="font-weight: bold">Illustrator</span> - research, design and planning</li>
+              <li><span style="font-weight: bold">Photoshop</span> - image creation and editing</li>
+              <li><span style="font-weight: bold">InDesign</span> - design for print and layout</li>
+            </ul>
+          </div>
+
+          <div class="column">
+            <h2>Skills</h2>
+            <ul>
+              <li><span style="font-weight: bold">Graphic Design</span> - typography and image editing </li>
+              <li><span style="font-weight: bold">Research and Planning</span> - examing brief, competition and identity </li>
+              <li><span style="font-weight: bold">Branding</span> - logo and colour choice</li>
+              <li><span style="font-weight: bold">Print Media Layout</span> - colour for print and print layouts</li>
+
+            </ul>
+          </div>
+
+        </div>
+          
+          <br>
+          <p>A big part of this project was <span style="font-weight: bold">research</span>. Before even beginning designing, I <span style="font-weight: bold">examined the brief carefully</span>, looked at my clients <span style="font-weight: bold">already established identity</span>, looked at the course identity and <span style="font-weight: bold">examined competitors</span>. By doing this, I made it clear for myself how to please the client and what direction to take the design.</p>
+          
+        <br>
+          <p>While designing, I used my research to keep the visuals reminiscent of the pre-established TU Dublin and the CDM course identites, but with enough of a creative twist to make it <span style="font-weight: bold">eye catching and engaging</span>, aswell as reflect the courses <span style="font-weight: bold">creative and technological nature</span>.</p>
+        <br>
+          <p><span style="font-weight: bold">Download the process book</span> <a href="/files/CDM%20Pamphlet%20Process%20Book.pdf" download>here</a> for a detailed walkthrough of my design process.</p>
+          
+
+      </div>
+      </div>
+      
+      
+   
+      <footer class="bar">
+        <nav class="nav" aria-label="Main">
+          <a class="btn" href="index.html">Index</a>
+          <a class="btn" href="projects.html" aria-current="page">Projects</a>
+          <a class="btn" href="about.html">About</a>
+        </nav>
+        <button class="btn info" popovertarget="info">i</button>
+      </footer>
+        
+      <div id="info" popover class="info-pop">
+          <p>Christopher Keatinge</p>
+          <p>Dublin, Ireland</p>
+          <p><a href="mailto:b00170101@mytudublin.ie">B00170101@mytudublin.com</a></p>
+          <p><a href="https://www.instagram.com/chris_keat_/">Instagram</a></p>
+          <p><a href="https://www.linkedin.com/in/christopher-keatinge/">LinkedIn</a></p>
+          <p><a href="/files/ChristopherKeatinge_CV.pdf" download>CV</a></p>
+      </div>
+        
+      
+      <script>
+        const box = document.getElementById("lightbox");
+        const big = box.querySelector("img");
+
+        document.querySelectorAll(".images button").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const img = btn.querySelector("img");
+            big.src = img.src;
+            big.alt = img.alt;
+            box.showModal();
+          });
+        });
+
+        box.addEventListener("click", () => box.close());
+      </script>
+      
+      
+    </body>
+</html>
+
+
+

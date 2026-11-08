@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ChrisKeatPortfolio</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body class="splitpage">
+        
+      <div class="split">
+
+        <div class="images">
+          <button type="button"><img src="images/rl1.jpg"></button>
+          <button type="button"><img src="images/rl2.jpg"></button>
+          <button type="button"><img src="images/rl3.jpg" ></button>
+          <button type="button"><img src="images/rl4.jpg" ></button>
+          <button type="button"><img src="images/rl5.jpg" ></button>
+        </div>
+        
+        <dialog class="lightbox" id="lightbox">
+          <img src="" alt="">
+        </dialog>
+
+        <div class="text">
+          <h1>Reallife.com - Interactive website</h1>
+            
+          <p><a href="https://liquidfat.github.io/Real-Life-Site/index.html"><span style="font-weight: bold">Link to website (desktop only)</span></a></p>
+          <br>
+          <p>"Reallife.com" is an interactive narrative website that was made as part of a college <span style="font-weight: bold">solo assignment</span>.</p>
+          <br>
+          
+          <p>The brief for the assignment was to create a website with <span style="font-weight: bold">real narrative content</span> and <span style="font-weight: bold">interaction that changes how the user explores</span> and <span style="font-weight: bold">understands</span> information. 
+            You could create whatever type of narrative you wanted, but the emphasis was on <span style="font-weight: bold">interaction</span>.
+          </p>
+          
+          <br>
+          <p>I chose to make a mystery/adventure game inspired by classic point and click games, with ARG (Alternate Reality Game) elements, in the style of an 90's selfmade blog/site.
+          </p>
+          
+          <br>
+          <p>This was a solo project so I was responsible for all elements of the creation. This included <span style="font-weight: bold">visual design</span>, <span style="font-weight: bold">interaction design</span>, <span style="font-weight: bold">user experience</span>, <span style="font-weight: bold">storytelling</span> and <span style="font-weight: bold">coding</span>. </p>
+          
+        
+          <div class="columns">
+
+          <div class="column">
+            <h2>Tools</h2>
+            <ul>
+              <li><span style="font-weight: bold">Illustrator</span> - design and layout planning</li>
+              <li><span style="font-weight: bold">Photoshop</span> - asset creation and editing</li>
+              <li><span style="font-weight: bold">HTML and CSS</span> - content and layout</li>
+              <li><span style="font-weight: bold">Javascript</span> - interactive elements</li>
+            </ul>
+          </div>
+
+          <div class="column">
+            <h2>Skills</h2>
+            <ul>
+              <li><span style="font-weight: bold">Graphic Design</span> - image editing, web design and layout</li>
+              <li><span style="font-weight: bold">UX Design</span> - navigation and interaction</li>
+              <li><span style="font-weight: bold">Interaction Design</span> - puzzle solving</li>
+              <li><span style="font-weight: bold">Problem Solving</span> - guiding the user and challenge level</li>
+              <li><span style="font-weight: bold">Storytelling</span> - writing and visual storytelling</li>
+              <li><span style="font-weight: bold">Coding</span> - Javascript elements</li>
+            </ul>
+          </div>
+
+      </div>
+          
+      <br>
+      <br>
+          <p>For me, the <span style="font-weight: bold">most succesful</span> element of this project is the use of <span style="font-weight: bold">nonlinear storytelling and interaction</span>. I designed it so the user would have to jump back and forth between
+            pages to piece puzzles together and progress, which I think keeps the experience <span style="font-weight: bold">engaging and interesting</span>.</p>
+          
+        <br>
+          <p>One of the most important things I learnt from this project was <span style="font-weight: bold">how to design interactions</span> and <span style="font-weight: bold">guide the user</span> through the experience, while keeping it engaging and not boring (especially since this
+          is a mystery game/experience which requires a certain level of difficulty and intrigue to keep it engaging).</p>
+        <br>
+          <p><span style="font-weight: bold">Download the process book</span> <a href="/files/Real%20Life%20Process%20Book.pdf" download>here</a> for a detailed walkthrough of my process.</p>
+        </div>
+      
+      
+   
+      <footer class="bar">
+        <nav class="nav" aria-label="Main">
+          <a class="btn" href="index.html">Index</a>
+          <a class="btn" href="projects.html" aria-current="page">Projects</a>
+          <a class="btn" href="about.html">About</a>
+        </nav>
+        <button class="btn info" popovertarget="info">i</button>
+      </footer>
+        
+      <div id="info" popover class="info-pop">
+          <p>Christopher Keatinge</p>
+          <p>Dublin, Ireland</p>
+          <p><a href="mailto:b00170101@mytudublin.ie">B00170101@mytudublin.com</a></p>
+          <p><a href="https://www.instagram.com/chris_keat_/">Instagram</a></p>
+          <p><a href="https://www.linkedin.com/in/christopher-keatinge/">LinkedIn</a></p>
+          <p><a href="/files/ChristopherKeatinge_CV.pdf" download>CV</a></p>
+      </div>
+        
+      
+      <script>
+        const box = document.getElementById("lightbox");
+        const big = box.querySelector("img");
+
+        document.querySelectorAll(".images button").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const img = btn.querySelector("img");
+            big.src = img.src;
+            big.alt = img.alt;
+            box.showModal();
+          });
+        });
+
+        box.addEventListener("click", () => box.close());
+      </script>
+      
+      
+      </div>
+      </body>
+</html>
+
+
+
