@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Christopher Keatinge Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body>
+        
+        <h1 class="page-title page-title-tight">“Gallery”</h1>
+        
+        <p class="subtitle">A collection of works and experiments. Made using many different mediums and techniques. </p>
+
+        <div class="gallery-grid">
+
+          <!-- Image -->
+          <button type="button" class="g-item" data-desc="Photo edit made on Instagram.">
+            <span class="g-media"><img src="images/2chairs.jpg"></span>
+            <span class="g-caption">001</span>
+          </button>
+            
+        <button type="button" class="g-item" data-desc="Photo collage made using Photoshop. All photos used taken by me.">
+            <span class="g-media"><img src="images/backlot.jpg"></span>
+            <span class="g-caption">002</span>
+          </button>
+        
+          <button type="button" class="g-item is-video" data-video="https://i.imgur.com/WRwUcn0.mp4" data-desc="Audio reactive animation. Modeled, rendered and composited in Blender. Audio is 'Xtal' by Aphex Twin. ">
+            <span class="g-media"><img src="images/xtal.jpg"></span>
+            <span class="g-caption">003</span>
+          </button> 
+            
+          <button type="button" class="g-item" data-desc="Photo taken on my phone. No edits.">
+            <span class="g-media"><img src="images/doomphoto.jpg"></span>
+            <span class="g-caption">004</span>
+          </button>
+            
+          <button type="button" class="g-item" data-desc="Photo scan of CD, hand screenprinted by me. Featuring imagery from the painting 'The Resurrection' by Piero della Francesca.">
+            <span class="g-media"><img src="images/cd.jpg"></span>
+            <span class="g-caption">005</span>
+          </button>
+            
+          <button type="button" class="g-item" data-desc="An edit of an image from the video game 'Earthbound'. Made as a single cover for the Dublin screamo band 'See the Horses'.">
+            <span class="g-media"><img src="images/giygas.jpg"></span>
+            <span class="g-caption">006</span>
+          </button>
+            
+          <button type="button" class="g-item is-video" data-video="https://i.imgur.com/CkQa8Ml.mp4" data-desc="Video and audio collage of Youtube videos. Made using the site Youtubemultiplier.com.">
+            <span class="g-media"><img src="images/oneohmash.jpg"></span>
+            <span class="g-caption">007</span>
+          </button>
+            
+          <button type="button" class="g-item" data-desc="T-shirt designed and hand screenprinted by me. Using imagery from Leonardo da Vinci's 'Mona Lisa'.">
+            <span class="g-media"><img src="images/mona2.jpg"></span>
+            <span class="g-caption">008</span>
+          </button>
+            
+          <button type="button" class="g-item" data-desc="Edited image made in Photoshop. Original image from blotterbarn.com.">
+            <span class="g-media"><img src="images/mickey.jpg"></span>
+            <span class="g-caption">009</span>
+          </button>
+            
+          <button type="button" class="g-item" data-desc="Virtual photography. Screenshot taken inside of the game 'Counter Strike:Source'.">
+            <span class="g-media"><img src="images/hills.jpg"></span>
+            <span class="g-caption">010</span>
+          </button>
+            
+         <button type="button" class="g-item is-video" data-video="https://i.imgur.com/szX6NPN.mp4" data-desc="Audio reactive video made using Touchdesigner. Audio is the song 'Sadmeal' by Bladee.">
+            <span class="g-media"><img src="images/coldvisions.jpg"></span>
+            <span class="g-caption">011</span>
+         </button>
+            
+        <button type="button" class="g-item" data-desc="T-shirt designed and hand screenprinted by me. Using imagery from Leonardo da Vinci's 'Mona Lisa'.">
+            <span class="g-media"><img src="images/mona1.jpg"></span>
+            <span class="g-caption">012</span>
+        </button>
+            
+            
+
+
+        </div>
+
+        <dialog class="gallery-box" id="gallery-box" aria-label="Expanded gallery item">
+          <div class="box-inner">
+            <div class="box-media">
+              <img src="" alt="" hidden>
+              <video controls playsinline hidden></video>
+            </div>
+            <p class="box-text"></p>
+          </div>
+        </dialog>
+        
+        
+        <footer class="bar">
+            <nav class="nav" aria-label="Main">
+              <a class="btn" href="index.html">Index</a>
+              <a class="btn" href="projects.html" aria-current="page">Projects</a>
+              <a class="btn" href="gallery.html" >Gallery</a>
+              <a class="btn" href="about.html">About</a>
+            </nav>
+            <button class="btn info" popovertarget="info">i</button>
+        </footer>
+        
+        <div id="info" popover class="info-pop">
+          <p>Christopher Keatinge</p>
+          <p>Dublin, Ireland</p>
+          <p><a href="mailto:b00170101@mytudublin.ie">B00170101@mytudublin.com</a></p>
+          <p><a href="https://www.instagram.com/chris_keat_/">Instagram</a></p>
+          <p><a href="https://www.linkedin.com/in/christopher-keatinge/">LinkedIn</a></p>
+          <p><a href="/files/ChristopherKeatinge_CV.pdf" download>CV</a></p>
+        </div>
+        
+        
+        
+        <script>
+          const box  = document.getElementById("gallery-box");
+          const big  = box.querySelector("img");
+          const vid  = box.querySelector("video");
+          const desc = box.querySelector(".box-text");
+
+          document.querySelectorAll(".g-item").forEach(item => {
+            item.addEventListener("click", () => {
+              const img = item.querySelector("img");
+              desc.textContent = item.dataset.desc || "";
+
+              if (item.dataset.video) {
+                big.hidden = true;
+                vid.hidden = false;
+                vid.src = item.dataset.video;
+                box.showModal();
+                vid.play();
+              } else {
+                vid.hidden = true;
+                big.hidden = false;
+                big.src = img.src;
+                big.alt = img.alt;
+                box.showModal();
+              }
+            });
+          });
+
+          box.addEventListener("click", e => {
+            if (e.target !== vid) box.close();
+          });
+
+          box.addEventListener("close", () => {
+            vid.pause();
+            vid.removeAttribute("src");
+            vid.load();
+          });
+        </script>
+        
+
+    </body>
+</html>
+
+
+
