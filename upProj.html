@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Christopher Keatinge Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body class="splitpage">
+        
+      <div class="split">
+
+        <div class="images">
+          <button type="button" class="is-video" data-video="videos/upweb.mp4">
+            <img src="images/bylight.jpg">
+          </button>
+          <button type="button"><img src="images/up1.jpg"></button>
+          <button type="button"><img src="images/up2.jpg"></button>
+          <button type="button"><img src="images/up3.jpg"></button>
+          <button type="button"><img src="images/up4.jpg"></button>
+          <button type="button"><img src="images/up5.jpg"></button>
+          <button type="button"><img src="images/up6.jpg"></button>
+         
+        </div>
+        
+        <dialog class="lightbox" id="lightbox">
+          <img src="" alt="">
+          <video controls playsinline hidden></video>
+        </dialog>
+
+        <div class="text">
+          <h1>up - Storytelling Music Video</h1>
+          
+          <p><span style="font-weight: bold">View an excerpt of the video on the left. See the whole video <a href="https://vimeo.com/1151654679?fl=pl&fe=sh">here</a></span>.</p>
+            
+          <br>
+          <p>Up is a short storytelling music video, created as part of a college <span style="font-weight: bold">solo assignment</span>.</p>
+          <br>
+          
+            <p>The brief for this project was to create a short film cut to music, that tells a story <span style="font-weight: bold">visually</span>, under the theme of <span style="font-weight: bold">'connections'</span>. The emphasis was on <span style="font-weight: bold">composition, editing and visual storytelling skills</span>.
+          </p>
+          <br>
+            <p>Since this was a solo project, I was responsible for all elements of the final video. This includes <span style="font-weight: bold">shooting video</span>, <span style="font-weight: bold">editing</span> and <span style="font-weight: bold">storytelling</span>.</p>
+          <br>
+            <p>The story I tried to tell with this video is one about the <span style="font-weight: bold">connection between humans and technology</span>, and how they evolve side by side. I did this through editing footage that I had taken, both on a DLSR and my phone, with images and footage
+                from the website <a href="https://archive.org/">Internet Archive</a> to the song <span style="font-weight: bold">'Up' by Oneohtrix Point Never</span>.</p>
+         <br>
+          <p>My main focus was on the edit. I kept the pace fast, cutting between shots along with the music, and layered images on top of eachother to show connection and create a surreal image.
+              One <span style="font-weight: bold">special technique</span> I used to create interesting imagery was using an <span style="font-weight: bold">interpolation software</span> to blend through a folder of old images to create a rapid morphing blending effect.
+              Another was editing the whole thing, playing it through a projector onto a wall and recording that to add a whole other layer of <span style="font-weight: bold">texture and colour</span>. </p>
+          
+          
+          
+        
+          <div class="columns">
+
+          <div class="column">
+            <h2>Tools</h2>
+            <ul>
+              <li><span style="font-weight: bold">PremierePro</span> - video editing</li>
+              <li><span style="font-weight: bold">Phone camera and DLSR</span> - photos and videography</li>
+              <li><span style="font-weight: bold">Projector</span> - projecting and re-recording video</li>
+              <li><span style="font-weight: bold">Internet Archive</span> - sourcing archive footage and images</li>
+                
+            </ul>
+          </div>
+
+          <div class="column">
+            <h2>Skills</h2>
+            <ul>
+              <li><span style="font-weight: bold">Cinematography</span> - composition and filming</li>
+              <li><span style="font-weight: bold">Editing</span> - laying out exhbition and interaction design</li>
+              <li><span style="font-weight: bold">Creative Vision</span> - ideation and execution </li>
+            </ul>
+          </div>
+
+        </div>
+          
+          <br>
+            <p>I am really proud of how this video turned out. I think the <span style="font-weight: bold">creative filmaking and editing</span> makes it stand out, and I think the audio and visuals work really well in tandem to tell the non-linear, abstract story that I wanted to tell.</p>
+          
+        </div>
+
+      </div>
+      
+      
+   
+      <footer class="bar">
+        <nav class="nav" aria-label="Main">
+          <a class="btn" href="index.html">Index</a>
+          <a class="btn" href="projects.html" aria-current="page">Projects</a>
+          <a class="btn" href="gallery.html" >Gallery</a>
+          <a class="btn" href="about.html">About</a>
+        </nav>
+        <button class="btn info" popovertarget="info">i</button>
+      </footer>
+        
+      <div id="info" popover class="info-pop">
+          <p>Christopher Keatinge</p>
+          <p>Dublin, Ireland</p>
+          <p><a href="mailto:b00170101@mytudublin.ie">B00170101@mytudublin.com</a></p>
+          <p><a href="https://www.instagram.com/chris_keat_/">Instagram</a></p>
+          <p><a href="https://www.linkedin.com/in/christopher-keatinge/">LinkedIn</a></p>
+          <p><a href="/files/ChristopherKeatinge_CV.pdf" download>CV</a></p>
+      </div>
+        
+      
+      <script>
+        const box = document.getElementById("lightbox");
+        const big = box.querySelector("img");
+        const vid = box.querySelector("video");
+
+        document.querySelectorAll(".images button").forEach(btn => {
+          btn.addEventListener("click", () => {
+            if (btn.dataset.video) {
+              big.hidden = true;
+              vid.hidden = false;
+              vid.src = btn.dataset.video;
+              box.showModal();
+              vid.play();
+            } else {
+              const img = btn.querySelector("img");
+              vid.hidden = true;
+              big.hidden = false;
+              big.src = img.src;
+              big.alt = img.alt;
+              box.showModal();
+            }
+          });
+        });
+
+        box.addEventListener("click", e => {
+          if (e.target !== vid) box.close();
+        });
+
+        box.addEventListener("close", () => {
+          vid.pause();
+          vid.removeAttribute("src");
+          vid.load();
+        });
+      </script>
+      
+      
+    </body>
+</html>
+
+
+
